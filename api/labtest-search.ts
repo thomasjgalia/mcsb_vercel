@@ -1,8 +1,9 @@
 // ============================================================================
-// API Endpoint: Lab Test Search (Measurement Domain)
+// API Endpoint: Lab Test Search (Measurement Domain) - OPTIMIZED
 // ============================================================================
 // Vercel Serverless Function
 // Endpoint: POST /api/labtest-search
+// OPTIMIZATION: Uses concept_search table with pre-computed search text
 // ============================================================================
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import {
@@ -49,28 +50,26 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // Validate input - allow empty searchterm for full list
     const searchValue = searchterm?.trim() || '';
 
-    // Build the SQL query (simplified from Labs_Step-1_LabTest_Only.sql)
+    // OPTIMIZED: Build the SQL query using concept_search table
     const sql = `
       WITH base AS (
-        -- Scope from the start: Measurement domain, LOINC/CPT4/HCPCS/SNOMED vocabularies
+        -- OPTIMIZED: Use concept_search with pre-computed search_text_upper
         SELECT
-          CONCEPT_ID std_concept_id,
-          CONCEPT_NAME,
-          CONCEPT_CODE,
-          CONCEPT_CLASS_ID,
-          VOCABULARY_ID
-        FROM CONCEPT
-        WHERE DOMAIN_ID = 'Measurement'
-          AND VOCABULARY_ID IN ('LOINC', 'CPT4', 'HCPCS', 'SNOMED')
+          cs.concept_id AS std_concept_id,
+          cs.concept_name AS CONCEPT_NAME,
+          cs.concept_code AS CONCEPT_CODE,
+          cs.concept_class_id AS CONCEPT_CLASS_ID,
+          cs.vocabulary_id AS VOCABULARY_ID
+        FROM dbo.concept_search cs
+        WHERE cs.domain_id = 'Measurement'
+          AND cs.vocabulary_id IN ('LOINC', 'CPT4', 'HCPCS', 'SNOMED')
           AND (
-            (VOCABULARY_ID = 'LOINC' AND CONCEPT_CLASS_ID = 'Lab Test')
-            OR VOCABULARY_ID = 'CPT4'
-            OR VOCABULARY_ID = 'SNOMED'
-            OR (VOCABULARY_ID = 'HCPCS' AND CONCEPT_CLASS_ID = 'HCPCS')
+            (cs.vocabulary_id = 'LOINC' AND cs.concept_class_id = 'Lab Test')
+            OR cs.vocabulary_id = 'CPT4'
+            OR cs.vocabulary_id = 'SNOMED'
+            OR (cs.vocabulary_id = 'HCPCS' AND cs.concept_class_id = 'HCPCS')
           )
-          AND (
-            CONVERT(varchar(50), CONCEPT_ID) + ' ' + UPPER(CONCEPT_CODE) + ' ' + UPPER(CONCEPT_NAME)
-          ) LIKE '%' + UPPER(@searchterm) + '%'
+          AND cs.search_text_upper LIKE '%' + UPPER(@searchterm) + '%'
       ),
       prop AS (
         SELECT CONCEPT_ID_1 std_concept_id, CONCEPT_ID_2
