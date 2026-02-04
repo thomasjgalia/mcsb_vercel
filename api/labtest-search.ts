@@ -135,10 +135,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           searched_code,
           searched_concept_class_id,
           vocabulary_id,
-          STRING_AGG(property, ', ') AS property,
-          STRING_AGG(scale, ', ') AS scale,
-          STRING_AGG(system, ', ') AS system,
-          STRING_AGG(time, ', ') AS time,
+          -- Use NULLIF to convert empty strings to NULL
+          NULLIF(STRING_AGG(CASE WHEN property IS NOT NULL THEN property END, ', '), '') AS property,
+          NULLIF(STRING_AGG(CASE WHEN scale IS NOT NULL THEN scale END, ', '), '') AS scale,
+          NULLIF(STRING_AGG(CASE WHEN system IS NOT NULL THEN system END, ', '), '') AS system,
+          NULLIF(STRING_AGG(CASE WHEN time IS NOT NULL THEN time END, ', '), '') AS time,
           MAX(panel_count) AS panel_count
         FROM term_raw
         GROUP BY
