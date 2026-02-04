@@ -4,8 +4,11 @@
 // Vercel Serverless Function
 // Endpoint: POST /api/labtest-search
 // OPTIMIZATION: Uses concept_search table with pre-computed search text
+// ROLLUPS: Applies attribute rollups from JSON files (loaded once per instance)
 // ============================================================================
 import type { VercelRequest, VercelResponse } from '@vercel/node';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 import {
   executeQuery,
   createErrorResponse,
@@ -29,6 +32,83 @@ interface LabTestSearchResult {
   panel_count: number;
 }
 
+// ============================================================================
+// Load rollup mappings (cached per serverless instance)
+// ============================================================================
+interface ScaleRollup {
+  attribute: string;
+  raw_value: string;
+  canonical: string;
+  label: string;
+}
+
+interface TimeRollup {
+  attribute: string;
+  raw_value: string;
+  time_bucket: string;
+}
+
+interface SystemRollup {
+  attribute: string;
+  raw_value: string;
+  canonical: string;
+  label: string;
+}
+
+let scaleRollups: ScaleRollup[] | null = null;
+let timeRollups: TimeRollup[] | null = null;
+let systemRollups: SystemRollup[] | null = null;
+
+function loadRollups() {
+  if (scaleRollups && timeRollups && systemRollups) {
+    return; // Already loaded
+  }
+
+  try {
+    const basePath = join(process.cwd(), 'SQL_Files', 'lab_attribute_rollups');
+
+    scaleRollups = JSON.parse(
+      readFileSync(join(basePath, 'rollup_scale_type.json'), 'utf-8')
+    );
+
+    timeRollups = JSON.parse(
+      readFileSync(join(basePath, 'rollup_time_aspect.json'), 'utf-8')
+    );
+
+    systemRollups = JSON.parse(
+      readFileSync(join(basePath, 'rollup_system.json'), 'utf-8')
+    );
+
+    console.log('✓ Loaded lab attribute rollups:', {
+      scale: scaleRollups?.length,
+      time: timeRollups?.length,
+      system: systemRollups?.length
+    });
+  } catch (error) {
+    console.error('Failed to load rollup files:', error);
+    // Set to empty arrays to prevent retry
+    scaleRollups = [];
+    timeRollups = [];
+    systemRollups = [];
+  }
+}
+
+// Apply rollups to a single result
+function applyRollups(result: LabTestSearchResult): LabTestSearchResult {
+  return {
+    ...result,
+    scale: result.scale
+      ? scaleRollups?.find(r => r.raw_value === result.scale)?.label || result.scale
+      : result.scale,
+    time: result.time
+      ? timeRollups?.find(r => r.raw_value === result.time)?.time_bucket || result.time
+      : result.time,
+    system: result.system
+      ? systemRollups?.find(r => r.raw_value === result.system)?.label || result.system
+      : result.system,
+  };
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   console.log('=== Lab Test Search API called ===');
   console.log('Method:', req.method);
@@ -44,6 +124,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
+    // Load rollup mappings (cached after first load)
+    loadRollups();
+
     const { searchterm } = req.body as LabTestSearchRequest;
     console.log('Lab Test Search params:', { searchterm });
 
@@ -159,10 +242,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       searchterm: searchValue,
     });
 
-    console.log('📤 Sending lab test search response with', results.length, 'results');
+    // Apply rollups to transform raw attribute values
+    const rolledUpResults = results.map(applyRollups);
+
+    console.log('📤 Sending lab test search response with', rolledUpResults.length, 'results (with rollups applied)');
     return res.status(200).json({
       success: true,
-      data: results,
+      data: rolledUpResults,
     });
   } catch (error) {
     console.error('Lab Test Search API error:', error);

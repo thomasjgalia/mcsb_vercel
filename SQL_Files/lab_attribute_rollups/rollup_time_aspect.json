@@ -1,1 +1,112 @@
-[]
+[
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "*",
+    "time_bucket": "Unspecified / Other"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "-",
+    "time_bucket": "Unspecified / Other"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "1 hour",
+    "time_bucket": "Short duration"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "10 hours",
+    "time_bucket": "Day-based duration"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "12 hours",
+    "time_bucket": "Day-based duration"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "18 hours",
+    "time_bucket": "Day-based duration"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "2 hours",
+    "time_bucket": "Short duration"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "24 hours",
+    "time_bucket": "Day-based duration"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "3 hours",
+    "time_bucket": "Short duration"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "4 hours",
+    "time_bucket": "Short duration"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "48 hours",
+    "time_bucket": "Multi-day duration"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "5 hours",
+    "time_bucket": "Short duration"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "6 hours",
+    "time_bucket": "Short duration"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "72 hours",
+    "time_bucket": "Multi-day duration"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "8 hours",
+    "time_bucket": "Day-based duration"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "Point in time (spot)",
+    "time_bucket": "Point in time"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "Reporting Period",
+    "time_bucket": "Study / Reporting Period"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "RptPeriod^mean",
+    "time_bucket": "Study / Reporting Period"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "Stdy^max",
+    "time_bucket": "Study / Reporting Period"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "Stdy^mean",
+    "time_bucket": "Study / Reporting Period"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "Study",
+    "time_bucket": "Study / Reporting Period"
+  },
+  {
+    "attribute": "Has time aspect",
+    "raw_value": "Unspecified",
+    "time_bucket": "Unspecified / Other"
+  }
+]

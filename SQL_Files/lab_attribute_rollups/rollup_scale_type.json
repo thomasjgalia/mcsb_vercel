@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "attribute": "Has scale type",
+    "raw_value": "-",
+    "canonical": "-",
+    "label": "Unspecified"
+  },
+  {
+    "attribute": "Has scale type",
+    "raw_value": "Doc",
+    "canonical": "Doc",
+    "label": "Document"
+  },
+  {
+    "attribute": "Has scale type",
+    "raw_value": "Nar",
+    "canonical": "Nar",
+    "label": "Narrative"
+  },
+  {
+    "attribute": "Has scale type",
+    "raw_value": "Nom",
+    "canonical": "Nom",
+    "label": "Nominal"
+  },
+  {
+    "attribute": "Has scale type",
+    "raw_value": "Ord",
+    "canonical": "Ord",
+    "label": "Ordinal"
+  },
+  {
+    "attribute": "Has scale type",
+    "raw_value": "OrdQn",
+    "canonical": "OrdQn",
+    "label": "Ordinal Quantitative"
+  },
+  {
+    "attribute": "Has scale type",
+    "raw_value": "Qn",
+    "canonical": "Qn",
+    "label": "Quantitative"
+  },
+  {
+    "attribute": "Has scale type",
+    "raw_value": "SemiQn",
+    "canonical": "SemiQn",
+    "label": "Semi-Quantitative"
+  }
+]

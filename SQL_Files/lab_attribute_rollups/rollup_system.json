@@ -1,1 +1,3151 @@
-[]
+[
+  {
+    "attribute": "Has system",
+    "raw_value": "Abdomen FNA",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "fna"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Abscess",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Adrenal gland",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Air",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Amniocytes",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Amniotic fluid",
+    "system_category": "Body Fluid",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Amniotic fluid cells",
+    "system_category": "Body Fluid",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Amniotic fluid or Chorionic villus sample",
+    "system_category": "Body Fluid",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Anal",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Anogenital",
+    "system_category": "Reproductive",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Anorectal",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Anorectal or stool",
+    "system_category": "Stool / GI",
+    "system_subcategory": "stool",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Aorta root",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Aortic valve",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Arterial blood and Inhaled gas",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "arterial"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Aspirate",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "aspirate"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "B cells+monocytes",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Bartholin cyst",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Bile fluid",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Bld/Tiss^Donor+Patient",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "Donor+Patient",
+      "donor"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood and Inhaled gas",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood arterial",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "arterial"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood capillary",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "capillary"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood capillary^Fetus",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "Fetus",
+      "capillary"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood central venous",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "venous",
+      "central venous"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood cord",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "cord"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood cord arterial",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "arterial",
+      "cord"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood cord mixed venous",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "venous",
+      "mixed venous",
+      "cord"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood cord venous",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "venous",
+      "cord"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood drawn from CRRT circuit",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood mixed venous",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "venous",
+      "mixed venous"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood mononuclear cells",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood or Marrow",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood or Marrow^Donor",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "Donor"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood or Tissue",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood or Tissue^Donor",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "Donor"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood or Urine",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood peripheral",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "peripheral"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood venous",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "venous"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood^BPU",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "BPU"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood^Control",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "Control"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood^Donor",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "Donor"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood^Father",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "Father"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood^Fetus",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "Fetus"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood^Mother",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "Mother"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Blood^Newborn",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "Newborn"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Body fld^fetus",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "fetus"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Body fluid",
+    "system_category": "Body Fluid",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Bodyfluid and Serum or Plasma",
+    "system_category": "Blood",
+    "system_subcategory": "serum or plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Bone",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Bone marrow",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Bone^Donor",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "Donor"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Brain",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Brain tissue",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Breast",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Breast FNA",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "fna"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Breast cancer specimen",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Breast ductal lavage",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "ductal lavage"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Breast tumor",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Bronchial",
+    "system_category": "Respiratory",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Bronchial brush",
+    "system_category": "Respiratory",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Bronchoalveolar lavage",
+    "system_category": "Respiratory",
+    "system_subcategory": "bronchoalveolar lavage",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Buccal smear",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Buffy Coat",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Burn",
+    "system_category": "Skin / Wound",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Bursa of Fabricius",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Calculus (stone)",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Cancer specimen",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Cannula specimen",
+    "system_category": "Device / Line",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Catheter tip",
+    "system_category": "Device / Line",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Cells.XXX",
+    "system_category": "Unknown / Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Cerebral spinal fluid",
+    "system_category": "CSF",
+    "system_subcategory": "cerebral spinal fluid",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Cervical mucus",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Cervix",
+    "system_category": "Reproductive",
+    "system_subcategory": "cervix",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Cervix or Vagina",
+    "system_category": "Reproductive",
+    "system_subcategory": "cervix",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Cheese",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Chorionic villus sample",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Colon",
+    "system_category": "Stool / GI",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Colorectal cancer specimen",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Colostrum",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Conjunctival specimen",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Contact lens",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Cord blood and Inhaled gas",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "cord"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Cornea",
+    "system_category": "Ocular",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Cornea or Conjunctiva",
+    "system_category": "Ocular",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Coronary sinus",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Current sample",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "DBS",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Dairy product",
+    "system_category": "Environmental / Food",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Deep tissue FNA",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "fna"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Dentin",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Dermatologic specimen",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Dialysis fluid",
+    "system_category": "Body Fluid",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Dialysis fluid + Serum or Plasma",
+    "system_category": "Blood",
+    "system_subcategory": "serum or plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Dialysis fluid peritoneal",
+    "system_category": "Body Fluid",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Dialysis fluid peritoneal + Serum or Plasma",
+    "system_category": "Blood",
+    "system_subcategory": "serum or plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Distal left anterior descending artery",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Distal left circumflex artery",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Distal right coronary artery",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Dose",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Drain",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Ductus arteriosus",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Duodenal fluid",
+    "system_category": "Stool / GI",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Duodenal fluid or Gastric fluid",
+    "system_category": "Stool / GI",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Ear",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Ear fluid",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Egg",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Egg yolk",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Endocervical brush",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Endometrial cancer specimen",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Endometrium",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Envir",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Environmental specimen",
+    "system_category": "Environmental / Food",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Esophageal brushing",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "brushing"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Esophagus",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Exhaled gas",
+    "system_category": "Respiratory",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Extracellular fluid",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Exudate",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Eye",
+    "system_category": "Ocular",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Facility",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Fat",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Feather",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Feed",
+    "system_category": "Environmental / Food",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Fibroblast",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Fibroblasts^Control",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "Control"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Fixed tissue",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "fixed"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Food",
+    "system_category": "Environmental / Food",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Gallbladder",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Gas",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Gastric fluid",
+    "system_category": "Stool / GI",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Gastrointestinal content",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Genital",
+    "system_category": "Reproductive",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Genital fluid",
+    "system_category": "Reproductive",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Genital lochia",
+    "system_category": "Reproductive",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Genital mucus",
+    "system_category": "Reproductive",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Glucose meter device",
+    "system_category": "Device / Line",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Hair",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Heart",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Heart atrium Right high",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Heart atrium Right low",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Heart atrium Right mid",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Heart interventricular septum",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Heart valve XXX",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Heart ventricle - left",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Heart ventricle Right outflow tract",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Heart.atrium Left",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Heart.atrium Right",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Heart.ventricle Right",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Hematopoietic progenitor cells^BPU",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "BPU"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Hyperal solution",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Implanted device",
+    "system_category": "Device / Line",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Index case^Comparison case",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "Comparison case"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Inferior vena cava",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Ingesta",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Inhaled gas",
+    "system_category": "Respiratory",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Initial sample",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Interstitial fluid",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Intrathecal space",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Intravascular space XXX",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Isolate",
+    "system_category": "Microbiology Isolate",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Isolate and Serum",
+    "system_category": "Blood",
+    "system_subcategory": "serum",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Isolate or Specimen",
+    "system_category": "Microbiology Isolate",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Isolate.UTI",
+    "system_category": "Microbiology Isolate",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Isolate.meningitis",
+    "system_category": "Microbiology Isolate",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Isolate.pneumonia",
+    "system_category": "Microbiology Isolate",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Kidney",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Kidney FNA",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "fna"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Kidney Left",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Kidney Right",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Laboratory device",
+    "system_category": "Device / Line",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Large intestine or small intestine Tissue",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Left main coronary artery",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Left pulmonary artery",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Line specimen",
+    "system_category": "Device / Line",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Litter",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Liver",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Liver FNA",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "fna"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Liver^Fetus",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "Fetus"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Lower GI tract",
+    "system_category": "Stool / GI",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Lower extremity",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Lower respiratory specimen",
+    "system_category": "Respiratory",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Lung",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Lung FNA",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "fna"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Lung Left",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Lung Right",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Lung tissue",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Lymph node",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Lymph node FNA",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "fna"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Lymphoblasts",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Meconium",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Mesorectum",
+    "system_category": "Stool / GI",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Mid left anterior descending artery",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Mid right coronary artery",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Middle left circumflex artery",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Milk",
+    "system_category": "Environmental / Food",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Mitral valve",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Mixed venous blood and Inhaled gas",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "venous",
+      "mixed venous"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Monocyte",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Mononuclear cells from unspecified specimen",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Mother's milk",
+    "system_category": "Environmental / Food",
+    "system_subcategory": null,
+    "modifiers": [
+      "mother"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Mouth",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Muscle",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "NBS card",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Nail",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Nasal fluid",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Nasopharynx",
+    "system_category": "Respiratory",
+    "system_subcategory": "nasopharynx",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Neck mass FNA",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "fna"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Neutrophil",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Nipple discharge",
+    "system_category": "Skin / Wound",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Nonbiological fluid",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Nose",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Nose or Trachea",
+    "system_category": "Respiratory",
+    "system_subcategory": "trachea",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Ocular fluid",
+    "system_category": "Ocular",
+    "system_subcategory": "ocular fluid",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Oropharyngeal wash",
+    "system_category": "Respiratory",
+    "system_subcategory": null,
+    "modifiers": [
+      "wash"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Ovarian aspirate",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "aspirate"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Ovary",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "PPP^pool",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "pool"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Pancreas",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Pancreas FNA",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "fna"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Parotid FNA",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "fna"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Patient serum and Donor blood",
+    "system_category": "Blood",
+    "system_subcategory": "serum",
+    "modifiers": [
+      "donor"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Pelvis FNA",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "fna"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Penis",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Pericardial fluid",
+    "system_category": "Body Fluid",
+    "system_subcategory": "pericardial fluid",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Pericardial fluid and serum or plasma",
+    "system_category": "Blood",
+    "system_subcategory": "serum or plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Pericardial space",
+    "system_category": "Body Fluid",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Peritoneal fluid",
+    "system_category": "Body Fluid",
+    "system_subcategory": "peritoneal fluid",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Peritoneal fluid and serum or plasma",
+    "system_category": "Blood",
+    "system_subcategory": "serum or plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Peritoneal space",
+    "system_category": "Body Fluid",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Peritoneum",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Pharynx",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Placenta",
+    "system_category": "Reproductive",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Plant",
+    "system_category": "Environmental / Food",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Plasma",
+    "system_category": "Blood",
+    "system_subcategory": "plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Plasma and CSF",
+    "system_category": "Blood",
+    "system_subcategory": "plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Plasma and Urine",
+    "system_category": "Blood",
+    "system_subcategory": "plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Plasma arterial",
+    "system_category": "Blood",
+    "system_subcategory": "plasma",
+    "modifiers": [
+      "arterial"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Plasma cell-free DNA",
+    "system_category": "Blood",
+    "system_subcategory": "plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Plasma cell-free+WBC DNA",
+    "system_category": "Blood",
+    "system_subcategory": "plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Plasma or Blood",
+    "system_category": "Blood",
+    "system_subcategory": "plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Plasma or RBC",
+    "system_category": "Blood",
+    "system_subcategory": "plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Plasma venous",
+    "system_category": "Blood",
+    "system_subcategory": "plasma",
+    "modifiers": [
+      "venous"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Plasma^Donor",
+    "system_category": "Blood",
+    "system_subcategory": "plasma",
+    "modifiers": [
+      "Donor"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Platelet poor plasma",
+    "system_category": "Blood",
+    "system_subcategory": "plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Platelet poor plasma or blood",
+    "system_category": "Blood",
+    "system_subcategory": "plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Platelet poor plasma^Control",
+    "system_category": "Blood",
+    "system_subcategory": "plasma",
+    "modifiers": [
+      "Control"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Platelet poor plasma^Fetus",
+    "system_category": "Blood",
+    "system_subcategory": "plasma",
+    "modifiers": [
+      "Fetus"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Platelet rich plasma",
+    "system_category": "Blood",
+    "system_subcategory": "plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Platelet rich plasma^Control",
+    "system_category": "Blood",
+    "system_subcategory": "plasma",
+    "modifiers": [
+      "Control"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Platelet rich plasma^Donor",
+    "system_category": "Blood",
+    "system_subcategory": "plasma",
+    "modifiers": [
+      "Donor"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Platelets",
+    "system_category": "Blood",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Platelets^BPU",
+    "system_category": "Blood",
+    "system_subcategory": null,
+    "modifiers": [
+      "BPU"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Pleura",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Pleural fluid",
+    "system_category": "Body Fluid",
+    "system_subcategory": "pleural fluid",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Pleural space Left",
+    "system_category": "Body Fluid",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Pleural space Right",
+    "system_category": "Body Fluid",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Plr fld^Fetus",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "Fetus"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Positive blood culture",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Preputial wash",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "wash"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Products of Conception",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Prostate",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Prostate FNA",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "fna"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Prostate cancer XXX",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Prostate tumor",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Prostatic fluid",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Proximal left anterior descending artery",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Proximal left circumflex artery",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Proximal right coronary artery",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Pulmonary artery main",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Pulmonary valve",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Pulmonary wedge",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Pus",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "RBC.lysate",
+    "system_category": "Blood",
+    "system_subcategory": "rbc",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "RBC^BPU",
+    "system_category": "Blood",
+    "system_subcategory": "rbc",
+    "modifiers": [
+      "BPU"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "RBC^Fetus",
+    "system_category": "Blood",
+    "system_subcategory": "rbc",
+    "modifiers": [
+      "Fetus"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "RBC^control",
+    "system_category": "Blood",
+    "system_subcategory": "rbc",
+    "modifiers": [
+      "control"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Raw milk",
+    "system_category": "Environmental / Food",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Rectum",
+    "system_category": "Stool / GI",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Red Blood Cells",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Red Blood Cells^Donor",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "Donor"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Red Blood Cells^Father",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "Father"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Red blood cells cord",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "cord"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Referral lab test",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Respiratory system specimen",
+    "system_category": "Respiratory",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Reticulocytes",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Rh immune globulin",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Right pulmonary artery",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Saliva",
+    "system_category": "Other",
+    "system_subcategory": "saliva",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Salivary gland FNA",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": "saliva",
+    "modifiers": [
+      "fna"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Semen",
+    "system_category": "Reproductive",
+    "system_subcategory": "semen",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Seminal fluid and Cervical mucosa",
+    "system_category": "Reproductive",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Seminal plasma",
+    "system_category": "Blood",
+    "system_subcategory": "plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Ser^Donor",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "Donor"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum",
+    "system_category": "Blood",
+    "system_subcategory": "serum",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum and Blood",
+    "system_category": "Blood",
+    "system_subcategory": "serum",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum and CSF",
+    "system_category": "Blood",
+    "system_subcategory": "serum",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum and Plasma",
+    "system_category": "Blood",
+    "system_subcategory": "serum",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum and RBC^Control",
+    "system_category": "Blood",
+    "system_subcategory": "serum",
+    "modifiers": [
+      "Control"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum and Saliva",
+    "system_category": "Blood",
+    "system_subcategory": "serum",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum or Blood",
+    "system_category": "Blood",
+    "system_subcategory": "serum",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum or Plasma",
+    "system_category": "Blood",
+    "system_subcategory": "serum or plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum or Plasma + Blood venous",
+    "system_category": "Blood",
+    "system_subcategory": "serum or plasma",
+    "modifiers": [
+      "venous"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum or Plasma and CSF",
+    "system_category": "Blood",
+    "system_subcategory": "serum or plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum or Plasma and Pleural fluid",
+    "system_category": "Blood",
+    "system_subcategory": "serum or plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum or Plasma and Stool",
+    "system_category": "Blood",
+    "system_subcategory": "serum or plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum or Plasma and Synovial fluid",
+    "system_category": "Blood",
+    "system_subcategory": "serum or plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum or Plasma or Urine",
+    "system_category": "Blood",
+    "system_subcategory": "serum or plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum or Plasma ultracentrifugate",
+    "system_category": "Blood",
+    "system_subcategory": "serum or plasma",
+    "modifiers": [
+      "ultracentrifugate"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum or Plasma^BPU",
+    "system_category": "Blood",
+    "system_subcategory": "serum or plasma",
+    "modifiers": [
+      "BPU"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum or Plasma^Donor",
+    "system_category": "Blood",
+    "system_subcategory": "serum or plasma",
+    "modifiers": [
+      "Donor"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum or Plasma^Fetus",
+    "system_category": "Blood",
+    "system_subcategory": "serum or plasma",
+    "modifiers": [
+      "Fetus"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum or Plasma^normal control",
+    "system_category": "Blood",
+    "system_subcategory": "serum or plasma",
+    "modifiers": [
+      "normal control",
+      "control"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum, Plasma or Blood",
+    "system_category": "Blood",
+    "system_subcategory": "serum",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum, Plasma or Blood^Donor",
+    "system_category": "Blood",
+    "system_subcategory": "serum",
+    "modifiers": [
+      "Donor"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum^Control",
+    "system_category": "Blood",
+    "system_subcategory": "serum",
+    "modifiers": [
+      "Control"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Serum^Fetus",
+    "system_category": "Blood",
+    "system_subcategory": "serum",
+    "modifiers": [
+      "Fetus"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Sinus",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Skin",
+    "system_category": "Skin / Wound",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Skin melanoma",
+    "system_category": "Skin / Wound",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Small intestine Fixed",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "fixed"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Small intestine Tissue",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Soft tissue FNA",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "fna"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Specimen",
+    "system_category": "Unknown / Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Spermatozoa",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Spiral colon",
+    "system_category": "Stool / GI",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Spleen",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Spun Body fluid",
+    "system_category": "Body Fluid",
+    "system_subcategory": null,
+    "modifiers": [
+      "spun"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Spun Cerebral spinal fluid",
+    "system_category": "CSF",
+    "system_subcategory": "cerebral spinal fluid",
+    "modifiers": [
+      "spun"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Spun Dialysis fluid",
+    "system_category": "Body Fluid",
+    "system_subcategory": null,
+    "modifiers": [
+      "spun"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Spun Pericardial fluid",
+    "system_category": "Body Fluid",
+    "system_subcategory": "pericardial fluid",
+    "modifiers": [
+      "spun"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Spun Peritoneal fluid",
+    "system_category": "Body Fluid",
+    "system_subcategory": "peritoneal fluid",
+    "modifiers": [
+      "spun"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Spun Pleural fluid",
+    "system_category": "Body Fluid",
+    "system_subcategory": "pleural fluid",
+    "modifiers": [
+      "spun"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Spun Synovial fluid",
+    "system_category": "Body Fluid",
+    "system_subcategory": "synovial fluid",
+    "modifiers": [
+      "spun"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Spun Vitreous fluid",
+    "system_category": "Ocular",
+    "system_subcategory": "vitreous fluid",
+    "modifiers": [
+      "spun"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Sputum",
+    "system_category": "Respiratory",
+    "system_subcategory": "sputum",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Sputum or Bronchial",
+    "system_category": "Respiratory",
+    "system_subcategory": "sputum",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Sputum or Gastric fluid",
+    "system_category": "Respiratory",
+    "system_subcategory": "sputum",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Sputum tracheal aspirate",
+    "system_category": "Respiratory",
+    "system_subcategory": "sputum",
+    "modifiers": [
+      "aspirate"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Stomach",
+    "system_category": "Stool / GI",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Stomach cancer",
+    "system_category": "Stool / GI",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Stool",
+    "system_category": "Stool / GI",
+    "system_subcategory": "stool",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Stool.dried",
+    "system_category": "Stool / GI",
+    "system_subcategory": "stool",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Stool.wet",
+    "system_category": "Stool / GI",
+    "system_subcategory": "stool",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Submandibular FNA",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "fna"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Superficial tissue FNA",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "fna"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Superior vena cava",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Swab specimen",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "swab"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Sweat",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Synovial fluid",
+    "system_category": "Body Fluid",
+    "system_subcategory": "synovial fluid",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "T cells",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Tear",
+    "system_category": "Ocular",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Testis",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Throat",
+    "system_category": "Respiratory",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Thyroid",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Thyroid FNA",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "fna"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Tiss",
+    "system_category": "Unknown / Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Tiss^Control",
+    "system_category": "Unknown / Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "Control"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Tiss^fetus",
+    "system_category": "Unknown / Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "fetus"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Tissue FNA",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "fna"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Tissue and Smears",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Tissue chip",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "chip"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Tissue core",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "core"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Tissue postmortem",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "postmortem"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Total parental nutrition",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Trachea",
+    "system_category": "Respiratory",
+    "system_subcategory": "trachea",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Tracheal swab",
+    "system_category": "Respiratory",
+    "system_subcategory": "trachea",
+    "modifiers": [
+      "swab"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Trophoblasts",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Tumor",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Umbilical cord tissue",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": [
+      "cord"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Unknown substance",
+    "system_category": "Unknown / Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Upper respiratory specimen",
+    "system_category": "Respiratory",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Urethra",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Urinary bladder",
+    "system_category": "Urine",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Urine",
+    "system_category": "Urine",
+    "system_subcategory": "urine",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Urine and Serum or Plasma",
+    "system_category": "Blood",
+    "system_subcategory": "serum or plasma",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Urine sediment",
+    "system_category": "Urine",
+    "system_subcategory": "urine",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Urine^Fetus",
+    "system_category": "Urine",
+    "system_subcategory": "urine",
+    "modifiers": [
+      "Fetus"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Uterus",
+    "system_category": "Reproductive",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Vag+Rectum",
+    "system_category": "Stool / GI",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Vagina",
+    "system_category": "Reproductive",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Vaginal",
+    "system_category": "Reproductive",
+    "system_subcategory": "vaginal",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Venous blood and Inhaled gas",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": [
+      "venous"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Ventriculoperitoneal (VP) shunt",
+    "system_category": "Body Fluid",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Vitreous fluid",
+    "system_category": "Ocular",
+    "system_subcategory": "vitreous fluid",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Vomitus",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "WBC^control",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "control"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Water",
+    "system_category": "Environmental / Food",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Whey",
+    "system_category": "Environmental / Food",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "White blood cells",
+    "system_category": "Blood",
+    "system_subcategory": "blood",
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Wound",
+    "system_category": "Skin / Wound",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Wound deep",
+    "system_category": "Skin / Wound",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "Wound shallow",
+    "system_category": "Skin / Wound",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "XXX",
+    "system_category": "Unknown / Other",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "XXX.body fluid",
+    "system_category": "Body Fluid",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "XXX.tissue",
+    "system_category": "Tissue / Organ",
+    "system_subcategory": null,
+    "modifiers": []
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "XXX^Donor",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "Donor"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "^BPU",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "BPU"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "^BPU.autologous",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "BPU.autologous",
+      "bpu"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "^BPU.platelet pheresis",
+    "system_category": "Blood",
+    "system_subcategory": null,
+    "modifiers": [
+      "BPU.platelet pheresis",
+      "bpu"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "^Egg donor",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "Egg donor",
+      "donor"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "^Embryo",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "Embryo"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "^Father",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "Father"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "^Fetus",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "Fetus"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "^Fetuses",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "Fetuses",
+      "fetus"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "^Mother",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "Mother"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "^Mushroom specimen",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "Mushroom specimen"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "^Patient",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "Patient"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "^Plant specimen",
+    "system_category": "Environmental / Food",
+    "system_subcategory": null,
+    "modifiers": [
+      "Plant specimen"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "^Population",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "Population"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "^Specimen",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "Specimen"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "^Stem cell product",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "Stem cell product"
+    ]
+  },
+  {
+    "attribute": "Has system",
+    "raw_value": "^Tick",
+    "system_category": "Other",
+    "system_subcategory": null,
+    "modifiers": [
+      "Tick"
+    ]
+  }
+]
