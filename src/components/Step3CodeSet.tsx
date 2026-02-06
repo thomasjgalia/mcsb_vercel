@@ -45,22 +45,19 @@ export default function Step3CodeSet({
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [showSaveModal, setShowSaveModal] = useState(false);
   const [isFiltering, setIsFiltering] = useState(false);
+  const [textFilter, setTextFilter] = useState<string>('');
 
   // Pending filter states (user selections, not yet applied)
   const [pendingVocabularies, setPendingVocabularies] = useState<Set<string>>(new Set());
   const [pendingCombos, setPendingCombos] = useState<Set<string>>(new Set());
   const [pendingDoseForms, setPendingDoseForms] = useState<Set<string>>(new Set());
   const [pendingDfgCategories, setPendingDfgCategories] = useState<Set<string>>(new Set());
-  const [pendingAttribute, setPendingAttribute] = useState<string>('');
-  const [pendingValue, setPendingValue] = useState<string>('');
 
   // Active filter states (actually applied to results)
   const [selectedVocabularies, setSelectedVocabularies] = useState<Set<string>>(new Set());
   const [selectedCombos, setSelectedCombos] = useState<Set<string>>(new Set());
   const [selectedDoseForms, setSelectedDoseForms] = useState<Set<string>>(new Set());
   const [selectedDfgCategories, setSelectedDfgCategories] = useState<Set<string>>(new Set());
-  const [selectedAttribute, setSelectedAttribute] = useState<string>('');
-  const [selectedValue, setSelectedValue] = useState<string>('');
 
   // Per-vocabulary display limits
   const [vocabDisplayLimits, setVocabDisplayLimits] = useState<Map<string, number>>(new Map());
@@ -74,7 +71,6 @@ export default function Step3CodeSet({
   useEffect(() => {
     if (workflow) {
       const newBuildType = workflow === 'direct' ? 'direct' : workflow === 'labtest' ? 'labtest' : 'hierarchical';
-      console.log('Setting build type from workflow prop:', newBuildType);
       setBuildType(newBuildType);
     }
   }, [workflow]);
@@ -82,7 +78,6 @@ export default function Step3CodeSet({
   // Auto-build when shopping cart is populated (e.g., from editing a saved code set)
   useEffect(() => {
     if (shoppingCart.length > 0 && !hasBuilt && !loading) {
-      console.log('Auto-building code set from cart:', shoppingCart);
       buildSet();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -166,20 +161,6 @@ export default function Step3CodeSet({
             domain_id: shoppingCart[0]?.domain_id || 'Condition',
           }));
 
-      console.log('💾 Saving code set:', {
-        userId: session.user.id,
-        name,
-        description,
-        isLargeCodeSet,
-        totalBuiltConcepts: filteredResults.length,
-        conceptsToSaveCount: conceptsToSave.length,
-        rootConceptsInCart: shoppingCart.length,
-        buildType: buildType,
-        workflow: workflow,
-        firstConcept: conceptsToSave[0],
-        lastConcept: conceptsToSave[conceptsToSave.length - 1],
-      });
-
       // Save the code set
       const saveResult = await saveCodeSet(session.user.id, {
         code_set_name: name,
@@ -196,15 +177,12 @@ export default function Step3CodeSet({
         },
       });
 
-      console.log('✅ Code set saved successfully:', saveResult);
-
       setSaveSuccess(true);
       setShowSaveModal(false);
       setTimeout(() => setSaveSuccess(false), 3000);
     } catch (error) {
-      console.error('❌ Failed to save code set:', error);
       const errorMessage = error instanceof Error ? error.message : String(error);
-      alert(`Failed to save code set: ${errorMessage}\n\nCheck browser console for full details.`);
+      alert(`Failed to save code set: ${errorMessage}`);
     } finally {
       setSaving(false);
     }
@@ -216,23 +194,6 @@ export default function Step3CodeSet({
     [results]
   );
 
-  const availableAttributes = useMemo(() =>
-    Array.from(new Set(results.filter((r) => r.concept_attribute).map((r) => r.concept_attribute as string))).sort(),
-    [results]
-  );
-
-  const availableValues = useMemo(() =>
-    pendingAttribute
-      ? Array.from(
-          new Set(
-            results
-              .filter((r) => r.concept_attribute === pendingAttribute && r.value)
-              .map((r) => r.value as string)
-          )
-        ).sort()
-      : [],
-    [results, pendingAttribute]
-  );
 
   const availableCombos = useMemo(() =>
     Array.from(new Set(results.filter((r) => r.combinationyesno).map((r) => r.combinationyesno as string))).sort(),
@@ -264,17 +225,13 @@ export default function Step3CodeSet({
       !setsEqual(pendingVocabularies, selectedVocabularies) ||
       !setsEqual(pendingCombos, selectedCombos) ||
       !setsEqual(pendingDoseForms, selectedDoseForms) ||
-      !setsEqual(pendingDfgCategories, selectedDfgCategories) ||
-      pendingAttribute !== selectedAttribute ||
-      pendingValue !== selectedValue
+      !setsEqual(pendingDfgCategories, selectedDfgCategories)
     );
   }, [
     pendingVocabularies, selectedVocabularies,
     pendingCombos, selectedCombos,
     pendingDoseForms, selectedDoseForms,
     pendingDfgCategories, selectedDfgCategories,
-    pendingAttribute, selectedAttribute,
-    pendingValue, selectedValue,
   ]);
 
   // Apply pending filters to active filters
@@ -286,8 +243,6 @@ export default function Step3CodeSet({
     setSelectedCombos(new Set(pendingCombos));
     setSelectedDoseForms(new Set(pendingDoseForms));
     setSelectedDfgCategories(new Set(pendingDfgCategories));
-    setSelectedAttribute(pendingAttribute);
-    setSelectedValue(pendingValue);
 
     // Hide filtering indicator after a delay
     setTimeout(() => setIsFiltering(false), 800);
@@ -299,21 +254,15 @@ export default function Step3CodeSet({
     setPendingCombos(new Set());
     setPendingDoseForms(new Set());
     setPendingDfgCategories(new Set());
-    setPendingAttribute('');
-    setPendingValue('');
 
     setSelectedVocabularies(new Set());
     setSelectedCombos(new Set());
     setSelectedDoseForms(new Set());
     setSelectedDfgCategories(new Set());
-    setSelectedAttribute('');
-    setSelectedValue('');
+
+    setTextFilter('');
   };
 
-  // Reset pending value when pending attribute changes
-  useEffect(() => {
-    setPendingValue('');
-  }, [pendingAttribute]);
 
   // Optimized filtering: combine all filters into single pass (memoized)
   const visibleResults = useMemo(() => {
@@ -321,13 +270,6 @@ export default function Step3CodeSet({
       // Vocabulary filter
       if (selectedVocabularies.size > 0 && !selectedVocabularies.has(r.child_vocabulary_id)) {
         return false;
-      }
-
-      // Attribute filter
-      if (selectedAttribute && selectedValue) {
-        if (r.concept_attribute !== selectedAttribute || r.value !== selectedValue) {
-          return false;
-        }
       }
 
       // Combo filter
@@ -345,9 +287,20 @@ export default function Step3CodeSet({
         return false;
       }
 
+      // Text filter (min 2 characters)
+      if (textFilter && textFilter.length >= 2) {
+        const searchText = textFilter.toLowerCase();
+        const matchesName = r.child_name?.toLowerCase().includes(searchText);
+        const matchesCode = r.child_code?.toLowerCase().includes(searchText);
+        const matchesVocab = r.child_vocabulary_id?.toLowerCase().includes(searchText);
+        if (!matchesName && !matchesCode && !matchesVocab) {
+          return false;
+        }
+      }
+
       return true;
     });
-  }, [results, selectedVocabularies, selectedAttribute, selectedValue, selectedCombos, selectedDoseForms, selectedDfgCategories]);
+  }, [results, selectedVocabularies, selectedCombos, selectedDoseForms, selectedDfgCategories, textFilter]);
 
   // Filter for export (exclude unchecked codes) - memoized
   const filteredResults = useMemo(() =>
@@ -674,8 +627,24 @@ export default function Step3CodeSet({
       {!loading && results.length > 0 && (
         <>
           {/* Combined Filters Panel */}
-          {(availableVocabularies.length > 1 || (availableAttributes.length > 0 && results.some((r) => r.value)) || availableCombos.length > 0 || availableDoseForms.length > 0 || availableDfgCategories.length > 0) && (
+          {(availableVocabularies.length > 1 || availableCombos.length > 0 || availableDoseForms.length > 0 || availableDfgCategories.length > 0) && (
             <div className="card p-3">
+              {/* Text Filter - Full Width at Top */}
+              <div className="mb-4">
+                <label htmlFor="textFilter" className="block text-xs font-medium text-gray-700 mb-1">
+                  Filter by name, code, or vocabulary (2+ chars)
+                </label>
+                <input
+                  id="textFilter"
+                  type="text"
+                  value={textFilter}
+                  onChange={(e) => setTextFilter(e.target.value)}
+                  placeholder="Search results..."
+                  className="input-field text-sm w-full max-w-md"
+                  autoComplete="off"
+                />
+              </div>
+
               <div className="flex flex-wrap gap-4 items-start">
                 {/* Vocabulary Filter */}
                 {availableVocabularies.length > 1 && (
@@ -860,54 +829,6 @@ export default function Step3CodeSet({
                   </div>
                 )}
 
-                {/* Attribute Filter (only show if values actually exist in the results) */}
-                {availableAttributes.length > 0 && results.some((r) => r.value) && (
-                  <div className="flex-1 min-w-[400px]">
-                    <h3 className="text-sm font-semibold text-gray-900 mb-2">
-                      Filter by Attribute
-                    </h3>
-                    <div className="flex gap-2">
-                      <select
-                        id="attributeFilter"
-                        value={pendingAttribute}
-                        onChange={(e) => setPendingAttribute(e.target.value)}
-                        className="select-field text-xs flex-1"
-                      >
-                        <option value="">All attributes</option>
-                        {availableAttributes.map((attr) => (
-                          <option key={attr} value={attr}>
-                            {attr}
-                          </option>
-                        ))}
-                      </select>
-                      <select
-                        id="valueFilter"
-                        value={pendingValue}
-                        onChange={(e) => setPendingValue(e.target.value)}
-                        className="select-field text-xs flex-1"
-                        disabled={!pendingAttribute || availableValues.length === 0}
-                      >
-                        <option value="">All values</option>
-                        {availableValues.map((val) => (
-                          <option key={val} value={val}>
-                            {val}
-                          </option>
-                        ))}
-                      </select>
-                      {(pendingAttribute || pendingValue) && (
-                        <button
-                          onClick={() => {
-                            setPendingAttribute('');
-                            setPendingValue('');
-                          }}
-                          className="btn-secondary text-xs px-2 py-1.5 whitespace-nowrap"
-                        >
-                          Clear
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                )}
               </div>
 
               {/* Apply Filters Button & Status */}
@@ -929,7 +850,7 @@ export default function Step3CodeSet({
                       </span>
                     )}
                   </button>
-                  {(pendingVocabularies.size > 0 || pendingCombos.size > 0 || pendingDoseForms.size > 0 || pendingDfgCategories.size > 0 || pendingAttribute) && (
+                  {(pendingVocabularies.size > 0 || pendingCombos.size > 0 || pendingDoseForms.size > 0 || pendingDfgCategories.size > 0) && (
                     <button
                       onClick={clearAllFilters}
                       className="text-xs text-gray-600 hover:text-gray-800 font-medium"
@@ -939,9 +860,7 @@ export default function Step3CodeSet({
                   )}
                 </div>
                 <p className="text-xs text-gray-500">
-                  {selectedAttribute && selectedValue
-                    ? `Filtered to ${visibleResults.length} codes with ${selectedAttribute} = ${selectedValue}`
-                    : selectedVocabularies.size === 0 && selectedCombos.size === 0 && selectedDoseForms.size === 0 && selectedDfgCategories.size === 0
+                  {selectedVocabularies.size === 0 && selectedCombos.size === 0 && selectedDoseForms.size === 0 && selectedDfgCategories.size === 0
                     ? `Showing all ${visibleResults.length} codes`
                     : `Showing ${visibleResults.length} of ${results.length} codes`}
                 </p>

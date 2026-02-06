@@ -7,9 +7,10 @@ import type { LabTestSearchResult, CartItem } from '../lib/types';
 // Import rollup files
 import scaleRollup from '../../SQL_Files/lab_attribute_rollups/rollup_scale_type.json';
 import systemRollup from '../../SQL_Files/lab_attribute_rollups/rollup_system.json';
-import timeRollup from '../../SQL_Files/lab_attribute_rollups/rollup_time_aspect.json';
+import termSuggestions from '../../SQL_Files/termsuggest.json';
+// Note: timeRollup not needed - API already does time rollup transformation
 
-type SortField = 'search_result' | 'vocabulary_id' | 'searched_concept_class_id' | 'lab_test_type' | 'scale' | 'system' | 'time' | 'panel_count';
+type SortField = 'search_result' | 'vocabulary_id' | 'searched_concept_class_id' | 'scale' | 'system' | 'time' | 'panel_count';
 type SortDirection = 'asc' | 'desc';
 
 interface Step1LabTestSearchProps {
@@ -47,8 +48,37 @@ export default function Step1LabTestSearch({
   const [sortField, setSortField] = useState<SortField | null>(null);
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
 
+  // Autocomplete
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(-1);
+
+  // Filter autocomplete suggestions based on search term
+  const suggestions = useMemo(() => {
+    const term = searchTerm.trim().toLowerCase();
+
+    if (term.length < 2) {
+      return [];
+    }
+
+    const allTerms = [
+      ...termSuggestions.single_words.map(w => ({ text: w, type: 'word' as const })),
+      ...termSuggestions.phrases.map(p => ({ text: p, type: 'phrase' as const })),
+      ...termSuggestions.drugs.map(d => ({ text: d, type: 'drug' as const })),
+    ];
+
+    const matches = allTerms.filter(item =>
+      item.text.toLowerCase().includes(term)
+    ).slice(0, 10); // Limit to 10 suggestions
+
+    return matches;
+  }, [searchTerm]);
+
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Close autocomplete
+    setShowSuggestions(false);
+    setSelectedSuggestionIndex(-1);
 
     setLoading(true);
     setError(null);
@@ -89,6 +119,45 @@ export default function Step1LabTestSearch({
     setSelectedSystemCategory('');
     setSelectedTimeBucket('');
     setTextFilter('');
+    setShowSuggestions(false);
+  };
+
+  // Handle autocomplete suggestion selection
+  const handleSuggestionSelect = (suggestionText: string) => {
+    setSearchTerm(suggestionText);
+    setShowSuggestions(false);
+    setSelectedSuggestionIndex(-1);
+  };
+
+  // Handle keyboard navigation in autocomplete
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!showSuggestions || suggestions.length === 0) {
+      return;
+    }
+
+    switch (e.key) {
+      case 'ArrowDown':
+        e.preventDefault();
+        setSelectedSuggestionIndex((prev) =>
+          prev < suggestions.length - 1 ? prev + 1 : prev
+        );
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        setSelectedSuggestionIndex((prev) => (prev > 0 ? prev - 1 : -1));
+        break;
+      case 'Enter':
+        if (selectedSuggestionIndex >= 0) {
+          e.preventDefault();
+          handleSuggestionSelect(suggestions[selectedSuggestionIndex].text);
+        }
+        break;
+      case 'Escape':
+        e.preventDefault();
+        setShowSuggestions(false);
+        setSelectedSuggestionIndex(-1);
+        break;
+    }
   };
 
   // Handle "Add to Cart" button click - toggles between add and remove
@@ -135,13 +204,8 @@ export default function Step1LabTestSearch({
     return map;
   }, []);
 
-  const timeToBucket = useMemo(() => {
-    const map = new Map<string, string>();
-    timeRollup.forEach((item: any) => {
-      map.set(item.raw_value, item.time_bucket);
-    });
-    return map;
-  }, []);
+  // Note: Time values are already rolled up by the API
+  // API transforms "1 hour" → "Short duration", so r.time is already the bucket value
 
   // Get unique values with rollup grouping
   const availableVocabularies = useMemo(() =>
@@ -194,7 +258,8 @@ export default function Step1LabTestSearch({
     const buckets = new Map<string, Set<string>>();
     vocabularyFilteredResults.forEach((r) => {
       if (r.time) {
-        const bucket = timeToBucket.get(r.time) || 'Unspecified / Other';
+        // r.time is already the rolled-up bucket value from the API
+        const bucket = r.time;
         if (!buckets.has(bucket)) {
           buckets.set(bucket, new Set());
         }
@@ -202,7 +267,7 @@ export default function Step1LabTestSearch({
       }
     });
     return buckets;
-  }, [vocabularyFilteredResults, timeToBucket]);
+  }, [vocabularyFilteredResults]);
 
   // Apply filters
   let filteredResults = results.filter((result) => {
@@ -238,8 +303,8 @@ export default function Step1LabTestSearch({
 
     // Time bucket filter
     if (selectedTimeBucket && result.time) {
-      const bucket = timeToBucket.get(result.time) || 'Unspecified / Other';
-      if (selectedTimeBucket !== bucket) {
+      // result.time is already the rolled-up bucket value from the API
+      if (selectedTimeBucket !== result.time) {
         return false;
       }
     } else if (selectedTimeBucket && !result.time) {
@@ -384,8 +449,8 @@ export default function Step1LabTestSearch({
       // Clear time if not available
       if (selectedTimeBucket) {
         const stillAvailable = newVocabFiltered.some((r) => {
-          const bucket = timeToBucket.get(r.time || '') || 'Unspecified / Other';
-          return bucket === selectedTimeBucket;
+          // r.time is already the rolled-up bucket value from the API
+          return r.time === selectedTimeBucket;
         });
         if (!stillAvailable) setSelectedTimeBucket('');
       }
@@ -414,15 +479,58 @@ export default function Step1LabTestSearch({
       {/* Search Form */}
       <div className="card p-4">
         <form onSubmit={handleSearch} className="flex gap-2">
-          <div className="flex-1">
+          <div className="flex-1 relative">
             <input
               type="text"
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={(e) => {
+                setSearchTerm(e.target.value);
+                setShowSuggestions(true);
+                setSelectedSuggestionIndex(-1);
+              }}
+              onKeyDown={handleKeyDown}
+              onFocus={() => setShowSuggestions(true)}
+              onBlur={() => {
+                // Delay to allow click on suggestion
+                setTimeout(() => setShowSuggestions(false), 200);
+              }}
               placeholder="Search lab tests (e.g., glucose, hemoglobin, cholesterol)..."
               className="input-field w-full"
               disabled={loading}
+              autoComplete="off"
             />
+
+            {/* Autocomplete Dropdown */}
+            {showSuggestions && suggestions.length > 0 && (
+              <div className="absolute z-50 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-64 overflow-y-auto">
+                {suggestions.map((suggestion, index) => (
+                  <div
+                    key={`${suggestion.type}-${suggestion.text}`}
+                    onClick={() => handleSuggestionSelect(suggestion.text)}
+                    className={`px-4 py-2 cursor-pointer flex items-center gap-2 ${
+                      index === selectedSuggestionIndex
+                        ? 'bg-primary-100'
+                        : 'hover:bg-gray-50'
+                    }`}
+                  >
+                    <span className="flex-1 text-sm text-gray-900">
+                      {suggestion.text}
+                    </span>
+                    <span
+                      className={`text-xs px-2 py-0.5 rounded ${
+                        suggestion.type === 'phrase'
+                          ? 'bg-blue-100 text-blue-700'
+                          : suggestion.type === 'drug'
+                          ? 'bg-green-100 text-green-700'
+                          : 'bg-gray-100 text-gray-700'
+                      }`}
+                    >
+                      {suggestion.type}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
           <button type="submit" className="btn-primary flex items-center gap-2" disabled={loading}>
             {loading ? (
@@ -661,45 +769,35 @@ export default function Step1LabTestSearch({
           {/* Results Table */}
           <div className="card p-0">
             <div className="overflow-x-auto">
-              <table className="table compact-table">
+              <table className="table compact-table" style={{ tableLayout: 'fixed', width: '100%' }}>
                 <thead>
                   <tr>
-                    <th className="text-xs py-2 cursor-pointer hover:bg-gray-50" onClick={() => handleSort('lab_test_type')}>
-                      Type {getSortIcon('lab_test_type')}
-                    </th>
-                    <th className="text-xs py-2 cursor-pointer hover:bg-gray-50" onClick={() => handleSort('search_result')}>
+                    <th className="w-[35%] text-xs py-2 cursor-pointer hover:bg-gray-50" onClick={() => handleSort('search_result')}>
                       Lab Test Name {getSortIcon('search_result')}
                     </th>
-                    <th className="text-xs py-2">Code</th>
-                    <th className="text-xs py-2 cursor-pointer hover:bg-gray-50" onClick={() => handleSort('vocabulary_id')}>
+                    <th className="w-[10%] text-xs py-2">Code</th>
+                    <th className="w-[10%] text-xs py-2 cursor-pointer hover:bg-gray-50" onClick={() => handleSort('vocabulary_id')}>
                       Vocabulary {getSortIcon('vocabulary_id')}
                     </th>
-                    <th className="text-xs py-2 cursor-pointer hover:bg-gray-50" onClick={() => handleSort('scale')}>
+                    <th className="w-[10%] text-xs py-2 cursor-pointer hover:bg-gray-50" onClick={() => handleSort('scale')}>
                       Scale {getSortIcon('scale')}
                     </th>
-                    <th className="text-xs py-2 cursor-pointer hover:bg-gray-50" onClick={() => handleSort('system')}>
+                    <th className="w-[12%] text-xs py-2 cursor-pointer hover:bg-gray-50" onClick={() => handleSort('system')}>
                       System {getSortIcon('system')}
                     </th>
-                    <th className="text-xs py-2 cursor-pointer hover:bg-gray-50" onClick={() => handleSort('time')}>
+                    <th className="w-[12%] text-xs py-2 cursor-pointer hover:bg-gray-50" onClick={() => handleSort('time')}>
                       Time {getSortIcon('time')}
                     </th>
-                    <th className="text-xs py-2 cursor-pointer hover:bg-gray-50" onClick={() => handleSort('panel_count')}>
+                    <th className="w-[6%] text-xs py-2 cursor-pointer hover:bg-gray-50" onClick={() => handleSort('panel_count')}>
                       In Panels {getSortIcon('panel_count')}
                     </th>
-                    <th className="w-20 text-xs py-2">Action</th>
+                    <th className="w-[5%] text-xs py-2">Action</th>
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
                   {filteredResults.map((result) => (
                     <tr key={result.std_concept_id} className="hover:bg-gray-50">
-                      <td className="py-2 px-2">
-                        <span className={`badge text-xs px-2 py-0.5 ${
-                          result.lab_test_type === 'Panel' ? 'badge-info' : 'badge-success'
-                        }`}>
-                          {result.lab_test_type}
-                        </span>
-                      </td>
-                      <td className="py-2 px-2 font-medium text-sm max-w-xs">
+                      <td className="py-2 px-2 font-medium text-sm">
                         <div className="flex items-center gap-1">
                           <span className="truncate" title={result.search_result}>
                             {result.search_result}
@@ -715,15 +813,23 @@ export default function Step1LabTestSearch({
                           </a>
                         </div>
                       </td>
-                      <td className="py-2 px-2 font-mono text-xs">{result.searched_code}</td>
+                      <td className="py-2 px-2 font-mono text-xs">
+                        <div className="truncate" title={result.searched_code}>{result.searched_code}</div>
+                      </td>
                       <td className="py-2 px-2">
                         <span className="badge badge-primary text-xs px-2 py-0.5">
                           {result.vocabulary_id}
                         </span>
                       </td>
-                      <td className="py-2 px-2 text-[8px] text-gray-600">{result.scale || '-'}</td>
-                      <td className="py-2 px-2 text-[8px] text-gray-600">{result.system || '-'}</td>
-                      <td className="py-2 px-2 text-[8px] text-gray-600">{result.time || '-'}</td>
+                      <td className="py-2 px-1 text-xs text-gray-600">
+                        <div className="truncate" title={result.scale || undefined}>{result.scale || '-'}</div>
+                      </td>
+                      <td className="py-2 px-1 text-xs text-gray-600">
+                        <div className="truncate" title={result.system || undefined}>{result.system || '-'}</div>
+                      </td>
+                      <td className="py-2 px-1 text-xs text-gray-600">
+                        <div className="truncate" title={result.time || undefined}>{result.time || '-'}</div>
+                      </td>
                       <td className="py-2 px-2 text-center">
                         {result.panel_count > 0 ? (
                           <span className="inline-flex items-center justify-center bg-blue-100 text-blue-800 text-xs font-medium px-2 py-0.5 rounded">

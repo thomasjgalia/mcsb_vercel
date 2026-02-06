@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, Loader2, AlertCircle, ArrowUpDown, ArrowUp, ArrowDown, ShoppingCart, GitBranch, PackageCheck } from 'lucide-react';
 import { searchConcepts, trackSearch } from '../lib/api';
 import { supabase } from '../lib/supabase';
 import type { DomainType, SearchResult, CartItem } from '../lib/types';
+import termSuggestions from '../../SQL_Files/termsuggest.json';
 
 type SortField = 'standard_name' | 'standard_vocabulary' | 'concept_class_id' | 'search_result' | 'searched_code' | 'searched_vocabulary';
 type SortDirection = 'asc' | 'desc';
@@ -53,6 +54,65 @@ export default function Step1Search({
   const [textFilter, setTextFilter] = useState<string>('');
   const [sortField, setSortField] = useState<SortField | null>(null);
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(-1);
+
+  // Autocomplete suggestions
+  const suggestions = useMemo(() => {
+    const term = searchTerm.trim().toLowerCase();
+
+    if (term.length < 2) {
+      return [];
+    }
+
+    const allTerms = [
+      ...termSuggestions.single_words.map(w => ({ text: w, type: 'word' as const })),
+      ...termSuggestions.phrases.map(p => ({ text: p, type: 'phrase' as const })),
+      ...termSuggestions.drugs.map(d => ({ text: d, type: 'drug' as const })),
+    ];
+
+    const matches = allTerms.filter(item =>
+      item.text.toLowerCase().includes(term)
+    ).slice(0, 10);
+
+    return matches;
+  }, [searchTerm]);
+
+  const handleSuggestionSelect = (suggestionText: string) => {
+    setSearchTerm(suggestionText);
+    setShowSuggestions(false);
+    setSelectedSuggestionIndex(-1);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!showSuggestions || suggestions.length === 0) {
+      return;
+    }
+
+    switch (e.key) {
+      case 'ArrowDown':
+        e.preventDefault();
+        setSelectedSuggestionIndex((prev) =>
+          prev < suggestions.length - 1 ? prev + 1 : prev
+        );
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        setSelectedSuggestionIndex((prev) => (prev > 0 ? prev - 1 : -1));
+        break;
+      case 'Enter':
+        if (selectedSuggestionIndex >= 0) {
+          e.preventDefault();
+          handleSuggestionSelect(suggestions[selectedSuggestionIndex].text);
+        }
+        break;
+      case 'Escape':
+        e.preventDefault();
+        setShowSuggestions(false);
+        setSelectedSuggestionIndex(-1);
+        break;
+    }
+  };
 
   const handleSearch = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -287,18 +347,60 @@ export default function Step1Search({
             <label htmlFor="searchTerm" className="block text-xs font-medium text-gray-700 mb-1">
               Search medical concepts
             </label>
-            <input
-              id="searchTerm"
-              type="text"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="e.g., ritonavir, diabetes"
-              className="input-field text-sm"
-              disabled={loading}
-              required
-              minLength={2}
-              autoComplete="off"
-            />
+            <div className="relative">
+              <input
+                id="searchTerm"
+                type="text"
+                value={searchTerm}
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                  setShowSuggestions(true);
+                  setSelectedSuggestionIndex(-1);
+                }}
+                onKeyDown={handleKeyDown}
+                onFocus={() => setShowSuggestions(true)}
+                onBlur={() => {
+                  setTimeout(() => setShowSuggestions(false), 200);
+                }}
+                placeholder="e.g., ritonavir, diabetes"
+                className="input-field text-sm"
+                disabled={loading}
+                required
+                minLength={2}
+                autoComplete="off"
+              />
+
+              {showSuggestions && suggestions.length > 0 && (
+                <div className="absolute z-50 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-64 overflow-y-auto">
+                  {suggestions.map((suggestion, index) => (
+                    <div
+                      key={`${suggestion.type}-${suggestion.text}`}
+                      onClick={() => handleSuggestionSelect(suggestion.text)}
+                      className={`px-4 py-2 cursor-pointer flex items-center gap-2 ${
+                        index === selectedSuggestionIndex
+                          ? 'bg-primary-100'
+                          : 'hover:bg-gray-50'
+                      }`}
+                    >
+                      <span className="flex-1 text-sm text-gray-900">
+                        {suggestion.text}
+                      </span>
+                      <span
+                        className={`text-xs px-2 py-0.5 rounded ${
+                          suggestion.type === 'phrase'
+                            ? 'bg-blue-100 text-blue-700'
+                            : suggestion.type === 'drug'
+                            ? 'bg-green-100 text-green-700'
+                            : 'bg-gray-100 text-gray-700'
+                        }`}
+                      >
+                        {suggestion.type}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Domain */}
@@ -310,6 +412,15 @@ export default function Step1Search({
               id="domain"
               value={domain}
               onChange={(e) => setDomain(e.target.value as DomainType | '')}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && domain && searchTerm.trim().length >= 2) {
+                  e.preventDefault();
+                  const form = e.currentTarget.closest('form');
+                  if (form) {
+                    form.requestSubmit();
+                  }
+                }
+              }}
               className="select-field text-sm"
               disabled={loading}
               required

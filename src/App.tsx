@@ -61,7 +61,9 @@ function AppContent() {
           session.user.id,
           session.user.email!,
           session.user.user_metadata?.display_name
-        ).catch(err => console.error('Failed to create user profile:', err));
+        ).catch(() => {
+          // Silently handle error
+        });
       }
     });
 
@@ -77,7 +79,9 @@ function AppContent() {
           session.user.id,
           session.user.email!,
           session.user.user_metadata?.display_name
-        ).catch(err => console.error('Failed to create user profile:', err));
+        ).catch(() => {
+          // Silently handle error
+        });
       }
     });
 
@@ -91,7 +95,6 @@ function AppContent() {
         await testConnection();
         setDbConnectionStatus('connected');
       } catch (error) {
-        console.error('Database connection failed:', error);
         setDbConnectionStatus('error');
         setDbErrorMessage(error instanceof Error ? error.message : 'Failed to connect to database');
       }
@@ -104,7 +107,6 @@ function AppContent() {
   useEffect(() => {
     const state = location.state as { cartItems?: CartItem[]; autoRebuild?: boolean } | null;
     if (state?.cartItems && state.cartItems.length > 0) {
-      console.log('Loading cart items from navigation state:', state.cartItems);
       setShoppingCart(state.cartItems);
       setCurrentStep(3);
 
